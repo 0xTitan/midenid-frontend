@@ -24,7 +24,7 @@ export default defineConfig({
           // Vendor chunks
           'react-vendor': ['react', 'react-dom', 'react-router'],
           'miden-wallet': [
-            '@demox-labs/miden-wallet-adapter'
+            '@miden-sdk/miden-wallet-adapter'
           ],
           'ui-vendor': [
             '@radix-ui/react-dialog',

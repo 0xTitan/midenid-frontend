@@ -6,9 +6,9 @@ import {
 } from "@/components/ui/shadcn-io/animated-modal";
 import { type ReactNode, useState, useEffect } from "react";
 import { cloneElement, isValidElement } from "react";
-import { useWallet } from "@demox-labs/miden-wallet-adapter";
+import { useWallet } from "@miden-sdk/miden-wallet-adapter";
 import {
-  MIDEN_FAUCET_CONTRACT_ADDRESS,
+  MIDEN_FAUCET_ID_BECH32,
   MIDEN_ID_CONTRACT_ADDRESS,
 } from "@/shared/constants";
 import { AccountId, Felt } from "@miden-sdk/miden-sdk";
@@ -62,7 +62,7 @@ function RegisterModalContent({
   const [noteId, setNoteId] = useState<string | null>(null);
   const [termsOpen, setTermsOpen] = useState(false);
 
-  const faucetId = AccountId.fromHex(MIDEN_FAUCET_CONTRACT_ADDRESS as string)
+  const faucetId = AccountId.fromBech32(MIDEN_FAUCET_ID_BECH32 as string);
 
   const accountId = address ? bech32ToAccountId(address) : null
 
@@ -106,6 +106,8 @@ function RegisterModalContent({
         );
 
         console.log("buyAmount:", buyAmount.toString());
+
+        console.log("faucetId:", faucetId.toString());
 
         const noteInputs = await executeStep(
           ErrorCodes.NOTE_INPUTS_CREATION_FAILED,
