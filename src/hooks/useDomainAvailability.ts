@@ -11,14 +11,6 @@ interface UseDomainAvailabilityResult {
   error: string | null
 }
 
-// export function useDomainAvailability(domain: string): UseDomainAvailabilityResult {
-//   return {
-//     available: true,
-//     loading: false,
-//     error: null,
-//   }
-// }
-
 export function useDomainAvailability(domain: string): UseDomainAvailabilityResult {
   const [status, setStatus] = useState<Status>('idle')
   const [available, setAvailable] = useState<boolean | null>(null)
