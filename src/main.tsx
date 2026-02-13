@@ -3,9 +3,11 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { ThemeProvider } from '@/components/ThemeProvider.tsx'
-import { WalletProvider } from '@demox-labs/miden-wallet-adapter-react'
-import { MidenWalletAdapter } from '@demox-labs/miden-wallet-adapter-miden'
-import { WalletModalProvider } from '@demox-labs/miden-wallet-adapter-reactui'
+import {
+  WalletProvider,
+  WalletModalProvider,
+  MidenWalletAdapter,
+} from '@miden-sdk/miden-wallet-adapter';
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import { Loader2 } from 'lucide-react'
 

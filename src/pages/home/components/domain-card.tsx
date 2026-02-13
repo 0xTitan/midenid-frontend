@@ -2,7 +2,7 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Loader2 } from 'lucide-react'
 import { RegisterModal } from '@/components/RegisterModal'
-import { useWallet, useWalletModal } from '@demox-labs/miden-wallet-adapter'
+import { useWallet, useWalletModal } from '@miden-sdk/miden-wallet-adapter'
 import { useDomainAvailability } from '@/hooks/useDomainAvailability'
 
 interface DomainCardProps {
