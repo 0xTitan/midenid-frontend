@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
-    "@miden-sdk/miden-sdk": "^0.13.0",
+    "@miden-sdk/miden-sdk": "^0.13.1",
     "@miden-sdk/miden-wallet-adapter": "^0.13.2",
     "@miden-sdk/react": "^0.13.2",
     "@radix-ui/react-accordion": "^1.2.12",
