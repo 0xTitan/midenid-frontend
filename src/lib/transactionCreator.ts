@@ -11,7 +11,9 @@ import {
     OutputNote,
     TransactionRequestBuilder,
     MidenArrays,
-    WebClient
+    WebClient,
+    NoteAttachment,
+    NoteExecutionHint
 } from '@miden-sdk/miden-sdk';
 import {
     CustomTransaction,
@@ -122,11 +124,13 @@ export async function transactionCreator({
                 const noteAssets = new NoteAssets([assets]);
                 const noteTag = NoteTag.withAccountTarget(destinationAccountId);
 
+                const networkTarget = NoteAttachment.newNetworkAccountTarget(destinationAccountId, NoteExecutionHint.always())
+
                 const noteMetadata = new NoteMetadata(
                     senderAccountId,
                     noteType,
                     noteTag
-                );
+                ).withAttachment(networkTarget);
 
                 const note = new Note(
                     noteAssets,
