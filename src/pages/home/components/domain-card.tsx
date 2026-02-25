@@ -22,7 +22,9 @@ export function DomainCard({ domain }: DomainCardProps) {
 
   const cardContent = (
     <Card
-      className={`cursor-pointer hover:shadow transition-all duration-200 border bg-card ${!loading && available === false
+      className={`cursor-pointer hover:shadow transition-all duration-200 border bg-card ${!loading && error
+        ? 'hover:border-yellow-500/50'
+        : !loading && available === false
         ? 'hover:border-destructive/50'
         : 'hover:border-primary/50'
         }`}
